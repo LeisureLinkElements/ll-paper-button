@@ -1,0 +1,42 @@
+{
+  "name": "ui-layout",
+  "homepage": "https://github.com/LeisureLink/ui-layout",
+  "authors": [],
+  "description": "ui layout",
+  "main": [
+    "build.js",
+    "layout.jade"
+  ],
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "ui"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules",
+    "gulpfile.js",
+    "package.json",
+    "README.md",
+    "controller",
+    "left-nav",
+    "top-nav",
+    "index.js",
+    "ui-layout.js"
+  ],
+  "dependencies": {
+    "ui-bootstrap": "git@github.com:LeisureLink/ui-bootstrap.git#gh-pages"
+  },
+  "_release": "6eafa9dcf3",
+  "_resolution": {
+    "type": "branch",
+    "branch": "develop",
+    "commit": "6eafa9dcf30807d5768199d3a49db56ca360f0cc"
+  },
+  "_source": "git@github.com:LeisureLink/ui-layout.git",
+  "_target": "develop",
+  "_originalSource": "git@github.com:LeisureLink/ui-layout.git"
+}

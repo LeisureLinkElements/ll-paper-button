@@ -1,0 +1,37 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title= pageTitle
+    meta(name='description', content='')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700', rel='stylesheet', type='text/css')
+    link(href='ui-bootstrap/styles/vendor.css', rel='stylesheet', type='text/css')
+    link(href='ui-bootstrap/styles/app.css', rel='stylesheet', type='text/css')
+    block head
+    block scripts
+  body(style="padding-top:50px;")
+    .container-fluid
+      .row.content-row
+        include ./top-nav/view
+        if leftNavItems
+          include ./left-nav/view
+        #ll-app-container(class=(leftNavItems ? 'content-container col-sm-9 col-lg-10' : 'col-sm-12'))
+          block content
+      .push
+    .footer-container
+      .footer(class='nonav')
+        div.text-center(style="padding:0",class='col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1')
+          p(style="padding:0")
+            | Need assistance?
+            = ' '
+            a(href='mailto:help@leisurelink.com') help@LeisureLink.com
+            br
+            | For immediate assistance
+            = ' '
+            strong 888-290-5398
+    script(src='ui-bootstrap/scripts/vendor.js', type='text/javascript')
+    script(src='ui-bootstrap/scripts/app.js', type='text/javascript')
+    script(src='ui-layout/build.js', type='text/javascript')
+    block tail

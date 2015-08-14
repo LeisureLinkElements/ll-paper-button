@@ -1,0 +1,40 @@
+{
+  "name": "ll-theme",
+  "version": "0.0.3",
+  "authors": [
+    "Anonymous <anonymous@example.com>"
+  ],
+  "description": "An element providing a solution to no problem in particular.",
+  "keywords": [
+    "web-component",
+    "web-components",
+    "polymer",
+    "seed"
+  ],
+  "main": "ll-theme.html",
+  "license": "http://polymer.github.io/LICENSE.txt",
+  "homepage": "https://github.com/<USERNAME>/seed-element/",
+  "ignore": [
+    "/.*",
+    "/test/",
+    "/demo/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.0.0",
+    "ui-bootstrap": "git@github.com:LeisureLink/ui-bootstrap.git#gh-pages",
+    "ui-layout": "git@github.com:LeisureLink/ui-layout.git#develop"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
+    "web-component-tester": "*"
+  },
+  "_release": "0.0.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.0.3",
+    "commit": "5a04acc18e676a7fea8e44725cacfc4cac8c8281"
+  },
+  "_source": "git://github.com/LeisureLinkElements/ll-theme.git",
+  "_target": "~0.0.1",
+  "_originalSource": "LeisureLinkElements/ll-theme"
+}
