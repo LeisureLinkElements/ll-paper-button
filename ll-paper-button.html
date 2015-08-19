@@ -1,14 +1,6 @@
 <link rel="import" href="./bower_components/polymer/polymer.html">
-<link rel="import" href="./bower_components/paper-dialog/paper-dialog.html">
 <link rel="import" href="./bower_components/paper-button/paper-button.html">
-<link rel="import" href="./bower_components/paper-material/paper-material.html">
-<link rel="import" href="./bower_components/neon-animation/animations/slide-down-animation.html">
-<link rel="import" href="./bower_components/neon-animation/animations/slide-up-animation.html">
-<link rel="import" href="./bower_components/neon-animation/animations/scale-up-animation.html">
-<link rel="import" href="./bower_components/neon-animation/animations/fade-out-animation.html">
-<link rel="import" href="./bower_components/neon-animation/animations/fade-in-animation.html">
-<link rel="import" href="./bower_components/neon-animation/neon-animation-runner-behavior.html">
-
+<link rel="import" href="./bower_components/iron-icons/iron-icons.html">
 <!--
 An element providing a solution to no problem in particular.
 
@@ -22,154 +14,59 @@ Example:
 
   <style>
     :host {
-      display: block;
+      -ms-text-size-adjust:100%;
+      -webkit-text-size-adjust:100%;
+      -webkit-appearance: none;
+      -webkit-font-smoothing: antialiased;
+      -webkit-user-select: none;
+      cursor: pointer;
+      display: inline-block;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      text-align: center;
     }
 
-    paper-ripple {
-      color: #0069AA;
-    }
 
-    paper-button {
-      border-radius: 15px;
-      height: 40px;
-      width: 140px;
-      color: #0069AA;
+    ll-paper-button, paper-button {
+      width: 100%;
+      height: auto;
+      padding: 0 25%;
+      background-color: #0069AA;
+      border-radius: 5rem;
+      color: #ffffff;
+      text-transform: none;
       -webkit-transition: all ease 0.25s;
       -moz-transition: all ease 0.25s;
       -o-transition: all ease 0.25s;
       transition: all ease 0.25s;
     }
 
-    paper-button:hover {
-      -webkit-transform: scale(1.05);
-      -moz-transform: scale(1.05);
-      -ms-transform: scale(1.05);
-      -o-transform: scale(1.05);
-      transform: scale(1.05);
-      -webkit-transition: all ease 0.25s;
-      -moz-transition: all ease 0.25s;
-      -o-transition: all ease 0.25s;
-      transition: all ease 0.25s;
+    ll-paper-button, paper-button:hover {
+      background-color: #005183;
     }
 
-    paper-material, paper-button {
-      box-shadow:0 8px 10px 1px rgba(0, 0, 0, 0.14),
-      0 3px 14px 2px rgba(0, 0, 0, 0.12),
-      0 5px 5px -3px rgba(0, 0, 0, 0.4);
-      transition:box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    paper-button::shadow paper-ripple {
+      color: #ffffff;
     }
 
   </style>
-
   <template>
-
-      <paper-button id="callmodal" tabindex="0" toggles="true" raised="" role="button" aria-pressed="true" aria-disabled="false" active="">
-          <paper-ripple class="style-scope paper-button">
-              <div id="background" class="style-scope paper-ripple" style="opacity: 0;"></div>
-              <div id="waves" class="style-scope paper-ripple"></div>
-          </paper-ripple>
-          <span>Click Me!</span>
-      </paper-button>
+    <paper-button>
+      <!--<iron-icon icon="favorite"></iron-icon>-->
+      Submit
+    </paper-button>
 
   </template>
-
-</dom-module>
-
 
 <script>
 
   Polymer({
     is: 'll-paper-button',
-    behaviors: [Polymer.NeonAnimationRunnerBehavior],
-    properties: {
-      opened: {
-        type: Boolean
-      },
-      animationConfig: {
-        value: function () {
-          return {
-            'entry': [
-              {
-                name: 'slide-down-animation',
-                node: this,
-                timing: {duration: 2000}
-              },
-              {
-                name: 'fade-in-animation',
-                node: this,
-                timing: {delay: 1000, duration: 1000}
-              }
-            ],
-            'exit': {
-              name: 'fade-out-animation',
-              node: this
-            }
-          }
-        }
-      }
-    },
     listeners: {
-      'neon-animation-finish': '_onNeonAnimationFinish'
-    },
-    toggle: function() {
-      if(this.opened) {
-        this.show();
-      }else{
-        this.hide();
-      }
-    },
-    show: function() {
-      this.opened = true;
-      this.style.display = 'inline-block';
-      this.cancelAnimation();
-      this.playAnimation('entry');
-    },
-    hide: function() {
-      this.opened = false;
-      this.cancelAnimation();
-      this.playAnimation('exit');
-    },
-    _onNeonAnimationFinish: function() {
-      if (!this.opened) {
-        this.style.display = 'none';
-      }
-    },
-    _dialogOpen: function(event) {
-      this.opened = true;
-      console.log();
-      this.open();
-    },
-
-    _dialogClose: function(event) {
-      this.close();
-    },
-
-  // Element Lifecycle
-
-    ready: function() {
-      // `ready` is called after all elements have been configured, but
-      // propagates bottom-up. This element's children are ready, but parents
-      // are not.
-      //
-      // This is the point where you should make modifications to the DOM (when
-      // necessary), or kick off any processes the element wants to perform.
-    },
-
-    attached: function() {
-      // `attached` fires once the element and its parents have been inserted
-      // into a document.
-      //
-      // This is a good place to perform any work related to your element's
-      // visual state or active behavior (measuring sizes, beginning animations,
-      // loading resources, etc).
-    },
-
-    detached: function() {
-      // The analog to `attached`, `detached` fires when the element has been
-      // removed from a document.
-      //
-      // Use this to clean up anything you did in `attached`.
     }
+
   });
 
 </script>
+</dom-module>
